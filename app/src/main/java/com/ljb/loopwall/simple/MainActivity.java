@@ -2,13 +2,14 @@ package com.ljb.loopwall.simple;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.ljb.loopwall.LoopWallView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private LoopWallView mLoopWallView;
 
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         mLoopWallView = (LoopWallView) findViewById(R.id.loop_view);
         mLoopWallView.setScrollV(0.2f); // 设置滚动速度，值越大，速度越快（默认0.2f）
+
+        findViewById(R.id.btn_pause).setOnClickListener(this);
+        findViewById(R.id.btn_resume).setOnClickListener(this);
     }
 
     private void initData() {
@@ -39,9 +43,20 @@ public class MainActivity extends AppCompatActivity {
             String prize = "礼品" + index;
             data.add(new ModeItem(phone, time, prize));
         }
+       initPage(data);
+    }
 
+    private void initPage(List<ModeItem> data) {
         mLoopWallView.setAdapter(new MyAdapter(this, data));
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_pause) {
+            mLoopWallView.pause();
+        } else if (v.getId() == R.id.btn_resume) {
+            mLoopWallView.resume();
+        }
+    }
 
 }

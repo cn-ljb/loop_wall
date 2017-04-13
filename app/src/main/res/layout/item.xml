@@ -7,14 +7,15 @@
         android:layout_width="match_parent"
         android:layout_height="32dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
         <TextView
             android:id="@+id/tv_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="18888888888"
             android:textColor="#666"
             android:textSize="12sp" />
 
@@ -23,18 +24,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="55dp"
-            android:text="2017-3-28"
+            android:layout_marginLeft="45dp"
             android:textColor="#666"
             android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/prize" />
 
         <TextView
             android:id="@+id/tv_thing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="55dp"
-            android:text="行车记录仪"
+            android:layout_marginLeft="5dp"
             android:textColor="#666"
             android:textSize="12sp" />
 

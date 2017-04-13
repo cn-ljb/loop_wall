@@ -2,13 +2,9 @@
 
 >一个支持任意ItemView无缝循环滚动控件
 >
->使用场景：纵向跑马灯、记录墙...
+>使用场景：纵向跑马灯、中奖记录等
 
-
-
-![](http://i.imgur.com/W5tVtNa.gif)
-
-
+![](http://i.imgur.com/47zNn0V.gif)
 
 
 ###如何使用？
@@ -23,11 +19,16 @@ xml文件中：
 Activity\Fragment中：
 	
 	 mLoopWallView = (LoopWallView) findViewById(R.id.loop_view);
-     mLoopWallView.setScrollV(0.2f); // 设置滚动速度，值越大，速度越快（默认0.2f）
-	 mLoopWallView.setAdapter(new MyAdapter(this, data));
+     mLoopWallView.setScrollV(0.2f); 	// 设置滚动速度，值越大，速度越快（默认0.2f）
+	 mLoopWallView.setAdapter(new MyAdapter(this, data));	
+	
+	 //支持手动暂停和恢复
+	 mLoopWallView.pause();		//暂停滚动
+	 mLoopWallView.resume();	//恢复滚动
+	
 
 
-Adapte继承BaseLoopWallAdapter类 或 实现LoopWallAdapter接口
+Adapte继承BaseLoopWallAdapter类 或 实现LoopWallAdapter接口:
 
 	class MyAdapter extends BaseLoopWallAdapter<ModeItem> {
 
