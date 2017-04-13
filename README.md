@@ -1,4 +1,4 @@
-#LoopView
+<h1>LoopWallView</h1>
 
 >一个支持任意ItemView无缝循环滚动控件
 >
@@ -7,7 +7,7 @@
 ![](http://i.imgur.com/47zNn0V.gif)
 
 
-###如何使用？
+<h3>如何使用？</h3>
 
 xml文件中：
 	
